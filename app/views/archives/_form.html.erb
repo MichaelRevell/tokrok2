@@ -1,0 +1,21 @@
+<%= form_for(@archive) do |f| %>
+  <% if @archive.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@archive.errors.count, "error") %> prohibited this archive from being saved:</h2>
+
+      <ul>
+      <% @archive.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :archiveID %><br />
+    <%= f.text_field :archiveID %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
